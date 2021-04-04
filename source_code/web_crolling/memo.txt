@@ -1,0 +1,17 @@
+<라이브러리 설치하기>
+pip install beautifulsoup4
+
+결과 - bs4 라이브러리가 설치됨
+
+<기본구조>
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://saywoo.github.io/saywoo/"
+ret = requests.get(url)
+soup = BeautifulSoup(ret.text, 'html.parser')
+
+결과 - soup라는 변수에 html 소스코드가 불러와짐
+
+<특정 태그 문자들만 추출하기>
+soup = soup.find_all()
