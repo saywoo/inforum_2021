@@ -1,3 +1,5 @@
+# 이건 혼자 연습한거
+
 import requests
 from bs4 import BeautifulSoup
 
