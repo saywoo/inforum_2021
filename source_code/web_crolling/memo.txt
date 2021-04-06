@@ -7,11 +7,24 @@ pip install beautifulsoup4
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://saywoo.github.io/saywoo/"
-ret = requests.get(url)
-soup = BeautifulSoup(ret.text, 'html.parser')
+url = "원하는 사이트 링크"
+req = requests.get(url)
+soup = BeautifulSoup(req, 'html.parser')
 
 결과 - soup라는 변수에 html 소스코드가 불러와짐
 
-<특정 태그 문자들만 추출하기>
-soup = soup.find_all()
+<html 소스코드에서 특정 태그만 추출하기>
+변수 = 변수 이름.find('태그 이름')
+(만약 특정 태그이고 특정 클래스인 것만 추출하고 싶으면 변수 = 변수 이름.find('태그 이름', class_='클래스 이름') )
+find -> 맨 처음 나오는 것만 저장함
+find_all -> 추출된 모든 것을 리스트 형태로 저장함
+
+<추출한 것을 텍스트만 골라서 출력하기>
+find를 사용했으면 
+print(변수이름.text)
+
+find_all을 사용했으면
+for i in 변수이름:
+    print(i.text)
+
+참고 (태그 이름, 클래스 이름(class_=''), 아이디 이름(id=''))
